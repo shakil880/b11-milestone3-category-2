@@ -5,25 +5,55 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
    <title>Nature's Platter</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
+   <style>
+   .marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    width: 100%;
+    font-size: 20px;
+    color: white;
+    background: #179800;
+    animation: scroll-left 20s linear infinite;
+   }
+
+   @keyframes scroll-left {
+      from {
+         transform: translateX(100%); 
+      }
+      to {
+         transform: translateX(-100%); 
+      }
+   }
+
+
+
+   </style>
+
 </head>
 
-<body>
+<body style="font-family: 'Sora', sans-serif;">
    
    <!-- header  -->
 
    <header class="bg-gradient-to-t from-[#FFFFFF] to-[#EFEBE3]">
-      <nav class="flex justify-between items-center max-w-330 mx-auto">
+      <nav class="flex justify-between items-center max-w-[95%] md:max-w-330 mx-auto">
          <div class="">
             <img src="./assets/logo-header.png" alt="">
          </div>
 
          <div class="hidden md:block lg: block">
-            <a href="">Product</a>
-            <a href="">Services</a>
-            <a href="">Contact Us</a>
+            <a class="mr-5" href="">Product</a>
+            <a class="mr-5" href="">Services</a>
+            <a class="mr-5" href="">Contact Us</a>
          </div>
 
-         <div class="hidden md:flex gap-5">
+         <div class="hidden md:flex justify-center items-center gap-5">
             <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                <g clip-path="url(#clip0_2_51)">
                <path d="M23.739 22.325L17.77 16.356C19.3966 14.3666 20.1964 11.8281 20.0039 9.26557C19.8113 6.70304 18.6412 4.31254 16.7356 2.58853C14.83 0.864519 12.3346 -0.0610992 9.76565 0.00313259C7.1967 0.0673644 4.75071 1.11653 2.93362 2.93362C1.11653 4.75071 0.0673644 7.1967 0.00313259 9.76565C-0.0610992 12.3346 0.864519 14.83 2.58853 16.7356C4.31254 18.6412 6.70304 19.8113 9.26557 20.0039C11.8281 20.1964 14.3666 19.3966 16.356 17.77L22.325 23.739C22.5136 23.9212 22.7662 24.022 23.0284 24.0197C23.2906 24.0174 23.5414 23.9122 23.7268 23.7268C23.9122 23.5414 24.0174 23.2906 24.0197 23.0284C24.022 22.7662 23.9212 22.5136 23.739 22.325ZM10.032 18.032C8.44976 18.032 6.90304 17.5628 5.58745 16.6838C4.27185 15.8047 3.24647 14.5553 2.64097 13.0935C2.03547 11.6317 1.87704 10.0231 2.18573 8.47129C2.49441 6.91944 3.25633 5.49397 4.37515 4.37515C5.49397 3.25633 6.91944 2.49441 8.47129 2.18573C10.0231 1.87704 11.6317 2.03547 13.0935 2.64097C14.5553 3.24647 15.8047 4.27185 16.6838 5.58745C17.5628 6.90304 18.032 8.44976 18.032 10.032C18.0296 12.153 17.186 14.1865 15.6862 15.6862C14.1865 17.186 12.153 18.0296 10.032 18.032Z" fill="black"/>
@@ -40,9 +70,9 @@
                <path d="M19.8383 11.5326L18.1974 16.0081L18.0209 16.4894L8.13463 15.1319L7.21586 11.9686L7.21586 11.9686C7.15251 11.7505 7.31612 11.5326 7.54325 11.5326H19.8383ZM17.0571 20.3962H18.7099L19.1242 21.1126C19.2457 21.3226 19.3154 21.5661 19.3154 21.828C19.3154 22.6188 18.6743 23.2599 17.8836 23.2599C17.0928 23.2599 16.4518 22.6188 16.4518 21.828C16.4518 21.5661 16.5214 21.3226 16.6429 21.1126L17.0571 20.3962ZM3.72772 20.3962H4.55417L4.9684 21.1126C5.08984 21.3226 5.15953 21.5661 5.15953 21.828C5.15953 22.6188 4.51848 23.2599 3.72772 23.2599C2.93696 23.2599 2.2959 22.6188 2.2959 21.828C2.2959 21.0373 2.93694 20.3962 3.72772 20.3962Z" stroke="#111111" stroke-width="1.5"/>
             </svg>
 
-            <button>Login</button>
+            <button class="w-25 h-10 border border-green-500 rounded-md">Login</button>
 
-            <button>Register</button>
+            <button class="w-25 h-10 bg-[#179800] rounded-md text-white">Register</button>
 
          </div>
 
@@ -56,14 +86,17 @@
 
       <!-- horizontal line -->
 
-      <hr class="block md:hidden lg:hidden">
+      <hr class="block border border-green-500 md:hidden lg:hidden">
+      <div class="marquee">
+            Hurry! A 20% HUGE discount is going on! Limited time offer!! Come first or regret later!!!
+      </div>
 
       <!-- banner -->
       <div class=" md:flex flex-col justify-between items-center max-w-330 mx-auto">
-         <h1 class="text-center text-3xl md:text-5xl font-bold">Freshness <span class="text-green-900">You Can</span> <br>
-            <span class="text-green-900">Count</span> On, Prices You’ll Love!
+         <h1 class="text-center text-3xl md:text-5xl font-bold">Freshness <span class="text-[#179800]">You Can</span> <br>
+            <span class="text-[#179800]">Count</span> On, Prices You’ll Love!
          </h1>
-         <p class="text-center">Shop your daily essentials at unbeatable prices. From fresh produce to pantry staples, we’ve got you covered every day!</p>
+         <p class="text-center text-[#868086] mt-5">Shop your daily essentials at unbeatable prices. From fresh produce to pantry staples, we’ve got you covered every day!</p>
          <div class="max-w-257">
             <img class="w-full" src="./assets/hero-vegetables.png" alt="">
          </div>
@@ -98,6 +131,14 @@
                <h1 class="font-bold text-xl">24 Services</h1>
                <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, et.</p>         
             </div>
+         </div>
+      </section>
+
+      <!-- 20% cash back -->
+      <section>
+         
+         <div class="max-w-[90%] md:max-w-200 mx-auto py-10">
+            <img src="./assets/offer.jpg" alt="">
          </div>
       </section>
 
@@ -177,7 +218,7 @@
                            </svg>
                            <span class="ml-3 text-sm font- md:text-xl font-semibold">4.5</span>                        
                         </div>
-                        <p class="text-sm md:text-2xl font-semibold">Potato 1KG</p>
+                        <p class="text-sm md:text-2xl font-semibold">Onion 1KG</p>
                         <p class="text-sm md:text-lg font-semibold">$5.99</p>
                      </div>
                   </div> 
@@ -209,7 +250,7 @@
                            </svg>
                            <span class="ml-3 text-sm font- md:text-xl font-semibold">4.5</span>                        
                         </div>
-                        <p class="text-sm md:text-2xl font-semibold">Tomato 1KG</p>
+                        <p class="text-sm md:text-2xl font-semibold">Onion 1KG</p>
                         <p class="text-sm md:text-lg font-semibold">$29.99</p>
                      </div>
                   </div> 
@@ -241,7 +282,7 @@
                            </svg>
                            <span class="ml-3 text-sm font- md:text-xl font-semibold">4.5</span>                        
                         </div>
-                        <p class="text-sm md:text-2xl font-semibold">Tomato 1KG</p>
+                        <p class="text-sm md:text-2xl font-semibold">Onion 1KG</p>
                         <p class="text-sm md:text-lg font-semibold">$29.99</p>
                      </div>
                   </div> 
@@ -307,7 +348,7 @@
                            </svg>
                            <span class="ml-3 text-sm font- md:text-xl font-semibold">4.5</span>                        
                         </div>
-                        <p class="text-sm md:text-2xl font-semibold">Potato 1KG</p>
+                        <p class="text-sm md:text-2xl font-semibold">Onion 1KG</p>
                         <p class="text-sm md:text-lg font-semibold">$5.99</p>
                      </div>
                   </div> 
@@ -371,7 +412,7 @@
                            </svg>
                            <span class="ml-3 text-sm font- md:text-xl font-semibold">4.8</span>                        
                         </div>
-                        <p class="text-sm md:text-2xl font-semibold">Tomato 1KG</p>
+                        <p class="text-sm md:text-2xl font-semibold">Onion 1KG</p>
                         <p class="text-sm md:text-lg font-semibold">$29.99</p>
                      </div>
                   </div> 
@@ -449,16 +490,16 @@
       <!-- mb-[-457px] -->
       <!-- Get grocerty news -->
       <section class="max-w-[90%] md:max-w-330 min-h-90 rounded-xl mx-auto bg-[#EFEBE3] mb-[-200px] relative">
-         <div class="flex flex:col md:flex-row items-center justify-around">
+         <div class="flex items-center justify-around p-5 flex-col md:flex-row items-center">
             <div>
-               <img src="./assets/vegetable-busket.png" alt="">
+               <img class="w-[60%]" src="./assets/vegetable-busket.png" alt="">
             </div>
             <!-- flex flex-col justify-center items-center text-center -->
             <div class="flex flex-col gap-4">
                <h1 class="text-[#179800] md:text-black text-left text-3xl font-semibold mb-12">Get Grocery News!</h1>
                <p class="block md:hidden">Exclusive training tips, ticks, product deals and more.</p>
                <input class="w-full h-10 bg-white rounded-md pl-4" type="email" placeholder="Enter email">
-               <button class="w-30 h-10 bg-[#179800] rounded-md text-white">Subscribe</button>
+               <button class="w-32 h-10 bg-[#179800] rounded-md text-white">Subscribe</button>
             </div>
          </div>
       </section>
