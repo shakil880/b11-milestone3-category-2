@@ -9,7 +9,36 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 
+
    <style>
+
+   .mobile-menu-hidden {
+      display: none;
+   }
+
+
+   .mobile-menu-show {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+
+      top: 93px;
+      right: 0;
+
+      background-color: lightgreen;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      text-align: center;
+      height: 200px;
+      width: 100%;
+
+      color: green;
+
+      justify-content: space-evenly;
+   }
+
+
+
    .marquee {
     white-space: nowrap;
     overflow: hidden;
@@ -48,6 +77,12 @@
          </div>
 
          <div class="hidden md:block lg: block">
+            <a class="mr-5" href="/product">Product</a>
+            <a class="mr-5" href="/Services">Services</a>
+            <a class="mr-5" href="/Contact-Us">Contact Us</a>
+         </div>
+
+         <div id="mob-menu" class="mobile-menu-hidden">
             <a class="mr-5" href="">Product</a>
             <a class="mr-5" href="">Services</a>
             <a class="mr-5" href="">Contact Us</a>
@@ -76,7 +111,7 @@
 
          </div>
 
-         <div class="block md:hidden lg:hidden">
+         <div class="block md:hidden lg:hidden" onclick="toggleMenu()">
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.75 8.4375C3.75 7.91973 4.16973 7.5 4.6875 7.5H25.3125C25.8303 7.5 26.25 7.91973 26.25 8.4375C26.25 8.95527 25.8303 9.375 25.3125 9.375H4.6875C4.16973 9.375 3.75 8.95527 3.75 8.4375ZM3.75 15C3.75 14.4822 4.16973 14.0625 4.6875 14.0625H25.3125C25.8303 14.0625 26.25 14.4822 26.25 15C26.25 15.5178 25.8303 15.9375 25.3125 15.9375H4.6875C4.16973 15.9375 3.75 15.5178 3.75 15ZM3.75 21.5625C3.75 21.0447 4.16973 20.625 4.6875 20.625H25.3125C25.8303 20.625 26.25 21.0447 26.25 21.5625C26.25 22.0803 25.8303 22.5 25.3125 22.5H4.6875C4.16973 22.5 3.75 22.0803 3.75 21.5625Z" fill="#179800"/>
             </svg>
@@ -92,7 +127,7 @@
       </div>
 
       <!-- banner -->
-      <div class=" md:flex flex-col justify-between items-center max-w-330 mx-auto">
+      <div class="banner md:flex flex-col justify-between items-center max-w-330 mx-auto">
          <h1 class="text-center text-3xl md:text-5xl font-bold">Freshness <span class="text-[#179800]">You Can</span> <br>
             <span class="text-[#179800]">Count</span> On, Prices You’ll Love!
          </h1>
@@ -546,5 +581,17 @@
          </div>
       </div>
    </footer>
+
+
+   <script>
+   
+   function toggleMenu() {
+      let menu = document.getElementById("mob-menu")
+      menu.classList.toggle("mobile-menu-show")
+   }
+
+
+   </script>
+
 </body>
 </html>
